@@ -8,8 +8,8 @@
     <%= f.label :title, "Survet Title" %>
     <%= f.text_field :title, class: "form-control", placeholder: "eg. The personality test" %>
     <%= f.label :description, "Survey Description" %>
-    <%= f.text_area :description, class: "form-control", placeholder: "eg. Discovering what is unique about people."
-                      %>
+    <%= f.text_area :description, class: "form-control", placeholder: "eg. Discovering what is unique about people." %>
+    <%= render "nested_form", f: f %>
     <br />
     <%= f.submit "Create Survey and Begin Adding Questions", class: "btn btn-primary btn-block" %>
   <% end %>

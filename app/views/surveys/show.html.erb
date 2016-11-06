@@ -1,0 +1,6 @@
+<h4>Title: <%= @survey.title %></h4>
+<h4> Descriptoin: <%= @survey.description %></h4>
+
+ <% @survey.questions.each do |q| %>
+  <h4> Question: <%= q.title %></h4>
+ <% end %>
