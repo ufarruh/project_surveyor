@@ -1,0 +1,26 @@
+<%= link_to "Back to Home", "/"%>
+
+<h3 class="text-center">Build Survey</h3>
+<hr />
+<div class="form-group">
+  <p>Nex, fill in the questions</p>
+  <h4>Title: </h4>
+  <p>
+    <%= @survey.title %>
+  </p>
+  <h4> Descriptoin:</h4>
+  <p>
+     <%= @survey.description %>
+  </p>
+  <hr />
+  <h4>Add a Question: </h4>
+  <p>Choose which type of question to add.</p>
+
+  <%= form_for @question do |f| %>
+    <%= f.label :title, "Survey Title" %>
+    <%= f.text_field :title, class: "form-control", placeholder: "eg. The personality test" %>
+
+    <br />
+    <%= f.submit "Create Survey and Begin Adding Questions", class: "btn btn-primary btn-block" %>
+  <% end %>
+</div>
