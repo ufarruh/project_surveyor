@@ -15,12 +15,13 @@
   <hr />
   <h4>Add a Question: </h4>
   <p>Choose which type of question to add.</p>
-
-  <%= form_for @question do |f| %>
-    <%= f.label :title, "Survey Title" %>
-    <%= f.text_field :title, class: "form-control", placeholder: "eg. The personality test" %>
-
-    <br />
-    <%= f.submit "Create Survey and Begin Adding Questions", class: "btn btn-primary btn-block" %>
+  
+    <%= form_for [@survey, @question] do |f| %>
+    <div class="form-group">
+    <%= f.hidden_field :survey_id %>
+    <%= f.select(:title, [['Mutiple Choice', 'Mutiple Choice'], ['Number Range', 'Number Range']], { class: "form-control" }) %>
+    <p></p>
+    <%= f.submit "Add a New Question", class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>

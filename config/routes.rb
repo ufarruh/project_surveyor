@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "surveys#index"
 
-  resources :surveys
-  resources :questions
+  resources :surveys do
+    resources :questions
+  end
 end
